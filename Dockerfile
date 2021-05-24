@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM debian:latest
 
 RUN apt-get update \
     && apt-get install --no-install-recommends -y \
@@ -7,6 +7,8 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 ENV LD_LIBRARY_PATH=/usr/local/lib/ \
+    LC_ALL=C.UTF-8 \
+    LANG=C.UTF-8 \
     PYTHONIOENCODING=utf-8
 
 COPY --from=python:3.9 /usr/local/lib/libpython3.9.so.1.0 /usr/local/lib/libpython3.9.so.1.0
