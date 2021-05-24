@@ -6,7 +6,8 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-ENV LD_LIBRARY_PATH=/usr/local/lib/
+ENV LD_LIBRARY_PATH=/usr/local/lib/ \
+    PYTHONIOENCODING=utf-8
 
 COPY --from=python:3.9 /usr/local/lib/libpython3.9.so.1.0 /usr/local/lib/libpython3.9.so.1.0
 COPY --from=python:3.9 /usr/local/lib/python3.9/ /usr/local/lib/python3.9/
