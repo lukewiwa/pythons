@@ -1,5 +1,7 @@
 # Pythons
 
+[![Build and Push](https://github.com/lukewiwa/pythons/actions/workflows/build.yml/badge.svg)](https://github.com/lukewiwa/pythons/actions/workflows/build.yml)
+
 A docker container that has the following latest versions of python installed:
 
 - 3.6
