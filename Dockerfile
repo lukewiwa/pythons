@@ -14,17 +14,24 @@ ENV LD_LIBRARY_PATH=/usr/local/lib/ \
 COPY --from=python:3.9 /usr/local/lib/libpython3.9.so.1.0 /usr/local/lib/libpython3.9.so.1.0
 COPY --from=python:3.9 /usr/local/lib/python3.9/ /usr/local/lib/python3.9/
 COPY --from=python:3.9 /usr/local/bin/python3.9 /usr/local/bin/python3.9
+COPY --from=python:3.9 /usr/local/bin/pip3.9 /usr/local/bin/pip3.9
 
 COPY --from=python:3.8 /usr/local/lib/libpython3.8.so.1.0 /usr/local/lib/libpython3.8.so.1.0
 COPY --from=python:3.8 /usr/local/lib/python3.8/ /usr/local/lib/python3.8/
 COPY --from=python:3.8 /usr/local/bin/python3.8 /usr/local/bin/python3.8
+COPY --from=python:3.8 /usr/local/bin/pip3.8 /usr/local/bin/pip3.8
 
 COPY --from=python:3.7 /usr/local/lib/libpython3.7m.so.1.0 /usr/local/lib/libpython3.7m.so.1.0
 COPY --from=python:3.7 /usr/local/lib/python3.7/ /usr/local/lib/python3.7/
 COPY --from=python:3.7 /usr/local/bin/python3.7 /usr/local/bin/python3.7
+COPY --from=python:3.7 /usr/local/bin/pip3.7 /usr/local/bin/pip3.7
 
 COPY --from=python:3.6 /usr/local/lib/libpython3.6m.so.1.0 /usr/local/lib/libpython3.6m.so.1.0
 COPY --from=python:3.6 /usr/local/lib/python3.6/ /usr/local/lib/python3.6/
 COPY --from=python:3.6 /usr/local/bin/python3.6 /usr/local/bin/python3.6
+COPY --from=python:3.6 /usr/local/bin/pip3.6 /usr/local/bin/pip3.6
+
+RUN touch /usr/local/bin/python /usr/local/bin/pip \
+    && chmod +x /usr/local/bin/python /usr/local/bin/pip
 
 ENTRYPOINT [ "/bin/bash" ]
