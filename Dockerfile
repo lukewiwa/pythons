@@ -11,6 +11,11 @@ ENV LD_LIBRARY_PATH=/usr/local/lib/ \
     LANG=C.UTF-8 \
     PYTHONIOENCODING=utf-8
 
+COPY --from=python:3.10 /usr/local/lib/libpython3.10.so.1.0 /usr/local/lib/libpython3.10.so.1.0
+COPY --from=python:3.10 /usr/local/lib/python3.10/ /usr/local/lib/python3.10/
+COPY --from=python:3.10 /usr/local/bin/python3.10 /usr/local/bin/python3.10
+COPY --from=python:3.10 /usr/local/bin/pip3.10 /usr/local/bin/pip3.10
+
 COPY --from=python:3.9 /usr/local/lib/libpython3.9.so.1.0 /usr/local/lib/libpython3.9.so.1.0
 COPY --from=python:3.9 /usr/local/lib/python3.9/ /usr/local/lib/python3.9/
 COPY --from=python:3.9 /usr/local/bin/python3.9 /usr/local/bin/python3.9
