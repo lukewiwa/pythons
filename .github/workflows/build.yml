@@ -23,6 +23,6 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: lukewiwa/pythons:latest
+          tags: lukewiwa/pythons:latest,lukewiwa/pythons:36-37-38-39-310
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
