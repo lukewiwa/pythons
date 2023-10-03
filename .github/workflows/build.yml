@@ -26,6 +26,6 @@ jobs:
         with:
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: lukewiwa/pythons:latest,lukewiwa/pythons:36-37-38-39-310-311
+          tags: lukewiwa/pythons:latest,lukewiwa/pythons:36-37-38-39-310-311-312
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
