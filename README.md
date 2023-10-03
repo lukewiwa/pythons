@@ -10,6 +10,7 @@ A docker container that has the following latest versions of python installed:
 - 3.9
 - 3.10
 - 3.11
+- 3.12
 
 Stub files are provided to create default `python` and `pip` executables via linking. eg:
 
